@@ -97,3 +97,9 @@ label {
 .hint {
 	font-style: italic;
 }
+
+.color-array {
+	display: flex;
+	gap: 4px;
+	justify-content: center;
+}

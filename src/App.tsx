@@ -77,6 +77,17 @@ function App() {
 						Hope you payed attention to the order of the colored envelopes.
 						Enter the right color sequence:
 					</h2>
+					{colorCombination && (
+						<div className="color-array">
+							&#91;
+							{colorCombination.map((color, index) => (
+								<span>
+									{index + 1}: {color},
+								</span>
+							))}
+							&#93;
+						</div>
+					)}
 					<div className="color-boxes">
 						{colors.map(color => (
 							<button
