@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const colors = ["red", "blue", "green", "yellow", "black"];
+const colors = ["red", "blue", "green", "gold", "black"];
 
 function App() {
 	const [inputValue, setInputValue] = useState<string | null>(null);
@@ -11,10 +11,12 @@ function App() {
 	const [gameIsLocked, setGameIsLocked] = useState(false);
 	const [count, setCount] = useState(5);
 
+	console.log("env:", import.meta.env.VITE_CODE);
+
 	function handleSubmit(event: React.FormEvent) {
 		event.preventDefault();
 
-		if (inputValue === "kruso") {
+		if (inputValue === import.meta.env.VITE_CODE) {
 			setUnlocked(true);
 		} else {
 			lockGame();
@@ -74,8 +76,8 @@ function App() {
 			{unlocked && !showFinalCode && (
 				<div className="color-section-wrapper">
 					<h2>
-						Hope you payed attention to the order of the colored clues. Enter
-						the right color sequence:
+						Hope you payed attention to the order of the colored envelopes.
+						Enter the right color sequence:
 					</h2>
 					<div className="color-boxes">
 						{colors.map(color => (
@@ -87,10 +89,26 @@ function App() {
 							></button>
 						))}
 					</div>
-					<button onClick={() => setColorCombination([])}>Start over</button>
+					<button onClick={() => setColorCombination([])}>Reset</button>
 				</div>
 			)}
-			{showFinalCode && <div>You made it!</div>}
+			{showFinalCode && (
+				<>
+					<div>
+						<h3>You made it to the last part! </h3>
+						<p>
+							Unlock the last treasure chest before someone else does. Need the
+							code? Find it..{" "}
+						</p>
+						<p className="hint">
+							Hint: I'm close yet far away. In pure eyesight I am visible, but
+							only during the night, not the day. A toggle would do, but today I
+							am not so generous 🔦
+						</p>
+					</div>
+					<span className="snow">{import.meta.env.VITE_LAST_CODE}</span>
+				</>
+			)}
 		</div>
 	);
 }

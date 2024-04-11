@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .secret
+.env
+
+# Local Netlify folder
+.netlify

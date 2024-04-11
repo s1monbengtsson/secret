@@ -52,15 +52,12 @@ button {
 
 form {
 	padding: 5rem;
+	text-align: start;
 }
 
 input {
-	padding: 1rem 2rem;
-}
-
-input:hover {
-	transform: translate(0, -150px);
-	background-color: red;
+	padding: 1rem 0.5rem;
+	margin: 0.5rem 0;
 }
 
 label {
@@ -86,4 +83,17 @@ label {
 
 .counter {
 	font-size: 7rem;
+}
+
+.snow {
+	color: #fff;
+	position: absolute;
+	font-size: 1.5rem;
+	padding: 2rem;
+	bottom: 10px;
+	right: 10px;
+}
+
+.hint {
+	font-style: italic;
 }
