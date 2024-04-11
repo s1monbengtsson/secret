@@ -11,8 +11,6 @@ function App() {
 	const [gameIsLocked, setGameIsLocked] = useState(false);
 	const [count, setCount] = useState(5);
 
-	console.log("env:", import.meta.env.VITE_CODE);
-
 	function handleSubmit(event: React.FormEvent) {
 		event.preventDefault();
 
@@ -53,7 +51,6 @@ function App() {
 		) {
 			setShowFinalCode(true);
 		}
-		console.log("combination", colorCombination);
 	}, [colorCombination]);
 
 	return (
