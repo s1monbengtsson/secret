@@ -46,9 +46,10 @@ function App() {
 
 	useEffect(() => {
 		if (
-			colorCombination[0] === "red" &&
-			colorCombination[1] === "blue" &&
-			colorCombination[2] === "yellow"
+			colorCombination[0] === import.meta.env.VITE_COLOR_ONE &&
+			colorCombination[1] === import.meta.env.VITE_COLOR_TWO &&
+			colorCombination[2] === import.meta.env.VITE_COLOR_THREE &&
+			colorCombination[3] === import.meta.env.VITE_COLOR_FOUR
 		) {
 			setShowFinalCode(true);
 		}
